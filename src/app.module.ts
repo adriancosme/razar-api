@@ -1,18 +1,19 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './users/user.module';
-import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './user/user.module';
 import { ConfigModule } from './config/config.module';
 import { Configuration } from './config/config.keys';
 import { DatabaseModule } from './database/database.module';
 import { ConfigService } from './config/config.service';
+import { SharedModule } from './shared/shared.module';
 
 @Module({
   imports: [
     UsersModule,
     ConfigModule,
     DatabaseModule,
+    SharedModule,
     /* AuthModule */],
   controllers: [AppController],
   providers: [AppService],

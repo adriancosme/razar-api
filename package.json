@@ -34,6 +34,7 @@
     "@nestjs/typeorm": "^7.1.4",
     "@types/dotenv": "^8.2.0",
     "bcrypt": "^5.0.0",
+    "class-validator": "^0.12.2",
     "dotenv": "^8.2.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
@@ -42,6 +43,7 @@
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
     "swagger-ui-express": "^4.1.4",
+    "ts-mapper": "^1.2.4",
     "typeorm": "^0.2.29"
   },
   "devDependencies": {
