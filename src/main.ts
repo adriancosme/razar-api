@@ -1,17 +1,13 @@
+import * as dotenv from 'dotenv';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import * as fs from 'fs';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const options = new DocumentBuilder()
-    .setTitle('API RAZAR')
-    .setDescription('API for App Mobile')
-    .setVersion('1.0')
-    .build();
-  const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api', app, document);
-
-  await app.listen(AppModule.port);
+  const processEnv: any = dotenv.parse(fs.readFileSync(`.env`));
+  app.setGlobalPrefix('api');
+  await app.listen(processEnv.PORT);
 }
 bootstrap();
